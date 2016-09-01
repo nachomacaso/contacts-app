@@ -1,0 +1,22 @@
+<h1>Contact Form</h1>
+<%= form_tag '/contact_show', method: :post do %>
+  <div>
+    <%= label_tag :contact_first_name, 'Enter First Name' %>
+    <%= text_field_tag :contact_first_name, nil %>
+  </div>
+  <div>
+    <%= label_tag :contact_last_name, 'Enter Last Name' %>
+    <%= text_field_tag :contact_last_name, nil %>
+  </div>
+  <div>
+    <%= label_tag :contact_email, 'Enter Email' %>
+    <%= text_field_tag :contact_email, nil %>
+  </div>
+  <div>
+    <%= label_tag :contact_phone, 'Enter Phone Number' %>
+    <%= text_field_tag :contact_phone, nil %>
+  </div>
+  <div>
+    <%= submit_tag 'Send Contact Info' %>
+  </div>
+<% end %>
