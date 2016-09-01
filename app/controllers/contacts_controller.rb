@@ -8,16 +8,10 @@ class ContactsController < ApplicationController
   end
 
   def add_form
-    @contact_first_name = params[:contact_first_name]
-    @contact_last_name = params[:contact_last_name]
-    @contact_email = params[:contact_email]
-    @contact_phone = params[:contact_phone]
+
   end
 
   def show_form
-    @contact_first_name = params[:contact_first_name]
-    @contact_last_name = params[:contact_last_name]
-    @contact_email = params[:contact_email]
-    @contact_phone = params[:contact_phone]
+    @contact = Contact.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], phone_number: params[:phone_number])
   end
 end
