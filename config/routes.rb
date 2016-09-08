@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get '/first' => 'contacts#first'
-  get '/all' => 'contacts#all'
-  get '/contact_form' => 'contacts#add_form'
-  post '/contact_show' => 'contacts#show_form'
+  get '/contacts' => 'contacts#index'
+
+  get '/contacts/new' => 'contacts#new'
+  post '/contacts' => 'contacts#create'
+
+  get '/contacts/:id' => 'contacts#show'
+
+  get '/contacts/:id/edit' => 'contacts#edit'
+  patch '/contacts/:id' => 'contacts#update'
+
+  delete '/contacts/:id' => 'contacts#destroy'
 end
