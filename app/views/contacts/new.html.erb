@@ -1,9 +1,13 @@
-<h1>Create a new contact</h1>
+<h2>Create a new contact</h2>
 
 <%= form_tag '/contacts', method: :post do %>
   <div>
     <%= label_tag :first_name %>
     <%= text_field_tag :first_name %>
+  </div>
+  <div>
+    <%= label_tag :middle_name %>
+    <%= text_field_tag :middle_name %>
   </div>
   <div>
     <%= label_tag :last_name %>
@@ -18,6 +22,11 @@
     <%= text_field_tag :email %>
   </div>
   <div>
-    <%= submit_tag 'Submit Contact' %>
+    <%= label_tag :bio %>
+    <%= text_field_tag :bio %>
   </div>
+  <div>
+    <%= hidden_field_tag :user_id, current_user.id %>
+  </div>
+    <%= submit_tag 'Submit Contact' %>
 <% end %>
